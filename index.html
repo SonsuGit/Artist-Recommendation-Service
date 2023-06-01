@@ -104,8 +104,12 @@
                 const card = cardTemplate.content.cloneNode(true);
                 card.querySelector('img').src = albumArtURL;
                 card.querySelector('p').textContent = i;
-                card.onclick = function() {
-                    window.open('https://rateyourmusic.com/search?searchterm=' + i)};
+                // 아래 코드 동작 안함
+                // card.onclick = function() {
+                //     window.open('https://rateyourmusic.com/search?searchterm=' + i)};
+                // 아래 코드는 생성할때 사이트가 열림
+                card.addEventListener("click", window.open('https://rateyourmusic.com/search?searchterm=' + i))
+
                 cardContainer.appendChild(card);
             }
         
