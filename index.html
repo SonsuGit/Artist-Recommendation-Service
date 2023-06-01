@@ -40,7 +40,7 @@
                 <p class="ml-2">로딩 중...</p>
             </div>
             <!-- 추천 아티스트(카드 템플릿과 함께 표시되어야함) -->
-            <div id="artistRecommend" class="font-bold text-3xl italic hidden">추천 아티스트입니다.</div>
+            <div id="artistRecommend" class="font-bold text-3xl text-center italic hidden">추천 아티스트입니다.<br>사진을 누르면 Spotify에서 검색합니다.</div>
             <!-- 카드 형식의 데이터 -->
             <div id="cardContainer" class="grid grid-cols-2 justify-center items-center m-10 lg:w-2/5 hidden">
                 <!-- 카드 템플릿 -->
@@ -98,6 +98,12 @@
             document.getElementById('initial-UI').classList.add('hidden');
             // 로딩 표시 보여주기
             document.getElementById('loadingIndicator').classList.remove('hidden');
+            // 카드 템플릿 누르면 검색하여 이동하게 하는 함수
+            const searchURL = 'https://open.spotify.com/search/'
+            function handleCardClick(artistName) {
+                window.open(searchURL + artistName);
+            }
+
             // chatGPT가 보낸 아티스트 이름 리스트로 카드템플릿 추가하기
             for (const i of ArtistNameList) {
                 const albumArtURL = await fetchAlbumArt(i);
@@ -106,9 +112,11 @@
                 card.querySelector('p').textContent = i;
                 // 아래 코드 동작 안함
                 // card.onclick = function() {
-                //     window.open('https://rateyourmusic.com/search?searchterm=' + i)};
+                //     window.open(searchURL + i)};
                 // 아래 코드는 생성할때 사이트가 열림
-                card.addEventListener("click", window.open('https://rateyourmusic.com/search?searchterm=' + i))
+                // card.addEventListener("click", window.open(searchURL + i))
+                card.querySelector('img').addEventListener("click", () => handleCardClick(i)); // 클릭 이벤트 리스너 추가
+                card.querySelector('p').addEventListener("click", () => handleCardClick(i)); // 클릭 이벤트 리스너 추가
 
                 cardContainer.appendChild(card);
             }
@@ -120,6 +128,8 @@
             document.getElementById('artistRecommend').classList.remove('hidden');
             
         });
+
+
         // https://github.com/lacymorrow/album-art
         async function fetchAlbumArt(artistName) {
             try {
