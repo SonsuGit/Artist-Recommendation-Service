@@ -11,8 +11,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .cardTemplate {
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.5s;
         }
+        /* .cardTemplate img{
+            width:300px;
+            height:200px;
+        } */
     
         .cardTemplate:hover {
             box-shadow: 0px 0px 5px 10px rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.15);
@@ -47,7 +51,7 @@
                 <template id="cardTemplate">
                     <div class="bg-[rgb(2,191,244)] rounded-lg p-4 m-2 flex flex-col items-center cardTemplate">
                         <img class="object-cover rounded-md mb-4" src="" alt="Artist Image">
-                        <p class="text-center text-white text-xl font-bold bg-[rgb(2,191,244)]/50 rounded p-1"></p>
+                        <p class="text-center text-white text-3xl font-bold bg-[rgb(2,191,244)]/50 rounded p-1"></p>
                     </div>
                 </template>
             </div>
@@ -110,11 +114,6 @@
                 const card = cardTemplate.content.cloneNode(true);
                 card.querySelector('img').src = albumArtURL;
                 card.querySelector('p').textContent = i;
-                // 아래 코드 동작 안함
-                // card.onclick = function() {
-                //     window.open(searchURL + i)};
-                // 아래 코드는 생성할때 사이트가 열림
-                // card.addEventListener("click", window.open(searchURL + i))
                 card.querySelector('img').addEventListener("click", () => handleCardClick(i)); // 클릭 이벤트 리스너 추가
                 card.querySelector('p').addEventListener("click", () => handleCardClick(i)); // 클릭 이벤트 리스너 추가
 
@@ -135,10 +134,6 @@
             try {
                 const response = await albumArt(artistName);
                 return response;
-
-                // const imageContainer = document.getElementById('imageContainer');
-                // imageContainer.innerHTML = `<img src="${response}" alt="Artist Image">
-                // <p>${artistName}</p>`;
             } catch (error) {
                 console.error(error);
             }
