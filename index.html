@@ -12,6 +12,7 @@
     <style>
         .cardTemplate {
             transition: box-shadow 0.5s;
+            cursor:pointer
         }
         .cardTemplate:hover {
             box-shadow: 0px 0px 5px 10px rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.15);
@@ -63,7 +64,7 @@
             "role": "system",
             "content": "좋아하는 가수를 입력받아서 그와 유사한 가수 4명의 이름을 나열해줘. Never provide additional context. only answer in this format: name1,name2,name3,name4 "
         }];
-        let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+        const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
         $button.addEventListener('click', async e => {
             e.preventDefault();
@@ -101,9 +102,9 @@
             // 로딩 표시 보여주기
             document.getElementById('loadingIndicator').classList.remove('hidden');
             // 카드 템플릿 누르면 검색하여 이동하게 하는 함수
-            const searchURL = 'https://open.spotify.com/search/'
+            const SEARCH_URL = 'https://open.spotify.com/search/'
             function cardClick(artistName) {
-                window.open(searchURL + artistName);
+                window.open(SEARCH_URL + artistName);
             }
 
             // chatGPT가 보낸 아티스트 이름 리스트로 카드템플릿 추가하기
