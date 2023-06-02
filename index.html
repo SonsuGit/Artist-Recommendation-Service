@@ -23,7 +23,7 @@
     <!-- 질문 -->
     <div class="">
         <div id="contentContainer" class="flex flex-col justify-center items-center m-5">
-            <div id="initial-UI" class="flex flex-col">
+            <form id="initial-UI" class="flex flex-col">
                 <!-- 로고 -->
                 <img class="mx-auto" src="./assets/Logo.png" alt="logo">
                 <!-- 인풋하는 영역 -->
@@ -33,7 +33,7 @@
                         비슷한 아티스트 검색
                     </button>
                 </div>
-            </div>
+            </form>
             <!-- 추가된 로딩 표시 -->
             <div id="loadingIndicator" class="flex justify-center items-center h-10 mt-4 hidden">
                 <span class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-gray-900"></span>
@@ -67,8 +67,12 @@
 
         $button.addEventListener('click', async e => {
             e.preventDefault();
-            userInputData = $input.value;
+            if($input.value.length == 0){
+                alert('아티스트명을 입력해주세요.')
+            }else{
+                userInputData = $input.value;
             $input.value = '';
+            }
         
             data.push({
                 "role": "user",
