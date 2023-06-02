@@ -9,6 +9,8 @@
     <script type="text/javascript" src="https://unpkg.com/album-art"></script>
     <!-- tailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/fetchAlbumArt.js"></script>
+    <script src="./assets/js/checkFormat.js"></script>
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -84,11 +86,7 @@
         
             const response = await res.json();
 
-            // 메시지가 들어왔는지 체크하는 함수
-            const checkFormat = (response) => {
-                const names = response.choices[0].message.content.split(',').map(name => name.trim());
-                return names.length === 4 && names.every(name => name !== '');
-            };
+            //function 있던자리
             if (!checkFormat(response)) {
                 alert('아티스트의 이름이 옳지 않거나 정보가 적습니다.');
                 console.log('아티스트없어');
@@ -132,17 +130,6 @@
             document.getElementById('artistRecommend').classList.remove('hidden');
             document.getElementById('cardContainer').classList.remove('hidden');
         });
-
-
-        // https://github.com/lacymorrow/album-art
-        async function fetchAlbumArt(artistName) {
-            try {
-                const response = await albumArt(artistName);
-                return response;
-            } catch (error) {
-                return './assets/img/no_img.webp'
-            }
-        }
     </script>
 </body>
 </html>
