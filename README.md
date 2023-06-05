@@ -9,3 +9,5 @@ Artist 4 U 구현 - vanilla JS와 tailwindcss + ChatGPT API를 이용하여 사�
 Header, Footer 추가하기
 #### 6월 4일
 JS 모듈화
+#### 6월 5일
+header, footer 추가하고 메인을 분리
