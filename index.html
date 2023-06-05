@@ -15,32 +15,7 @@
     <!-- Header -->
     <header data-include="./assets/html/header.html"></header>
     <!-- Main -->
-    <main id="contentContainer" class="flex flex-col justify-center items-center m-5">
-        <form id="initial-UI" class="flex flex-col">
-            <!-- 인풋하는 영역 -->
-            <div class="flex flex-col items-center">
-                <input type="text" id="artistInput" class="bg-[rgb(2,191,244)] text-gray-900 text-sm rounded-md focus:outline-none focus:ring-8 focus:ring-[rgb(255,64,2)]/90 block lg:w-3/5 md:w-1/2 sm:w-1/3 sm:w-2/3 p-2.5 m-5 placeholder:text-center placeholder:text-white placeholder:font-bold text-white font-bold text-center" placeholder="아티스트 입력" required>
-                <button class="bg-[rgb(2,191,244)] hover:bg-[rgb(255,64,2)]/90 text-white font-bold py-2 px-4 rounded" onclick="fetchAlbumArt()">
-                    비슷한 아티스트 검색
-                </button>
-            </div>
-        </form>
-        <!-- 추가된 로딩 표시 -->
-        <div id="loadingIndicator" class="flex justify-center items-center h-10 mt-4 hidden">
-            <span class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-gray-900"></span>
-            <p class="ml-2">로딩 중...</p>
-        </div>
-        <!-- 카드 형식의 데이터 -->
-        <div id="cardContainer" class="grid grid-cols-2 justify-center items-center m-10 lg:w-4/5 hidden">
-            <!-- 카드 템플릿 -->
-            <template id="cardTemplate">
-                <div class="bg-[rgb(2,191,244)] h-auto rounded-lg p-4 m-2 flex flex-col items-center cardTemplate">
-                    <img class="object-cover aspect-square rounded-md mb-4" src="" alt="Artist Image">
-                    <p class="text-center text-white text-3xl sm:text-xl font-bold bg-[rgb(2,191,244)]/50 rounded p-1"></p>
-                </div>
-            </template>
-        </div>
-    </main>
+    <main>인덱스입니다</main>
     <!-- Footer -->
     <footer data-include="./assets/html/footer.html"></footer>
     <script type="text/javascript" src="https://unpkg.com/album-art"></script>
