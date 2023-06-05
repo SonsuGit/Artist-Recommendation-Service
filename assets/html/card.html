@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <!-- tailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- 추천 아티스트(카드 템플릿과 함께 표시되어야함) -->
+    <div id="artistRecommend" class="font-bold text-3xl text-center italic hidden">
+    추천 아티스트입니다.<br>사진을 누르면<br>Spotify에서 검색합니다.
+    </div>
+    <!-- 카드 형식의 데이터 -->
+    <div id="cardContainer" class="grid grid-cols-2 justify-center items-center m-10 lg:w-4/5 hidden">
+    <!-- 카드 템플릿 -->
+        <template id="cardTemplate">
+            <div class="bg-[rgb(2,191,244)] h-auto rounded-lg p-4 m-2 flex flex-col items-center cardTemplate">
+                <img class="object-cover aspect-square rounded-md mb-4" src="" alt="Artist Image">
+                <p class="text-center text-white text-3xl sm:text-xl font-bold bg-[rgb(2,191,244)]/50 rounded p-1"></p>
+            </div>
+        </template>
+    </div>
+</body>
+</html>
+

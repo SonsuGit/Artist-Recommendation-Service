@@ -65,7 +65,6 @@ $button.addEventListener('click', async e => {
     console.log(response.choices[0].message.content)
     // 로딩 표시 숨기기
     document.getElementById('loadingIndicator').classList.add('hidden');
-    // 카드 컨테이너와 추천한다는 문구 보이기
-    document.getElementById('artistRecommend').classList.remove('hidden');
+    // 카드 컨테이너
     document.getElementById('cardContainer').classList.remove('hidden');
 });
