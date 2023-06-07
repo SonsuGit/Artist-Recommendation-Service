@@ -11,3 +11,5 @@ Header, Footer 추가하기
 JS 모듈화
 #### 6월 5일
 header, footer 추가하고 메인을 분리
+#### 6월 6일
+search(아티스트에 관한 정보 알아보기)추가와 header, footer UI 조정
