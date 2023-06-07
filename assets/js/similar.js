@@ -30,7 +30,7 @@ $button.addEventListener('click', async e => {
     });
 
     const response = await res.json();
-    //function 있던자리
+
     if (!checkFormat(response)) {
         alert('아티스트의 이름이 옳지 않거나 정보가 적습니다.');
         console.log('아티스트없어');

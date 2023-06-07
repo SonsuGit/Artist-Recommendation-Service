@@ -2,7 +2,7 @@ let $input = document.querySelector('#artistInput');
 let $button = document.querySelector('button');
 let data = [{
     "role": "system",
-    "content": "좋아하는 가수를 입력받아서 그와 유사한 가수 4명의 이름을 나열해줘. Never provide additional context. only answer in this format: name1,name2,name3,name4 "
+    "content": "좋아하는 가수를 입력받고, 그 가수의 특징에 대해 설명해줘"
 }];
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 $button.addEventListener('click', async e => {
@@ -30,13 +30,12 @@ $button.addEventListener('click', async e => {
     });
 
     const response = await res.json();
-    //function 있던자리
-    if (!checkFormat(response)) {
-        alert('아티스트의 이름이 옳지 않거나 정보가 적습니다.');
-        console.log('아티스트없어');
-        return;
-    }
-    let ArtistNameList = response.choices[0].message.content.split(",");
+
+    // --- 여기부터 새로 수정하기 ---
+
+    let ArtistDescription = response.choices[0].message.content;
+    console.log(ArtistDescription)
+    let receivedArtistName = userInputData
     const cardContainer = document.getElementById('cardContainer');
     const cardTemplate = document.getElementById('cardTemplate');
 
@@ -52,15 +51,14 @@ $button.addEventListener('click', async e => {
     }
     console.log(response)
     // chatGPT가 보낸 아티스트 이름 리스트로 카드템플릿 추가하기
-    for (const i of ArtistNameList) {
-        const albumArtURL = await fetchAlbumArt(i);
-        const card = cardTemplate.content.cloneNode(true);
-        card.querySelector('img').src = albumArtURL;
-        card.querySelector('p').textContent = i;
-        card.querySelector('img').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
-        card.querySelector('p').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
-        cardContainer.appendChild(card);
-    }
+    const albumArtURL = await fetchAlbumArt(receivedArtistName);
+    const card = cardTemplate.content.cloneNode(true);
+    card.querySelector('img').src = albumArtURL;
+    card.querySelector('h2').textContent = receivedArtistName;
+    card.querySelector('p').textContent = ArtistDescription;
+    card.querySelector('img').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
+    card.querySelector('p').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
+    cardContainer.appendChild(card);
     // 받은 데이터가 맞는지
     console.log(response.choices[0].message.content)
     // 로딩 표시 숨기기
