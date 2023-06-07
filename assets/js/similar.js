@@ -57,8 +57,7 @@ $button.addEventListener('click', async e => {
         const card = cardTemplate.content.cloneNode(true);
         card.querySelector('img').src = albumArtURL;
         card.querySelector('p').textContent = i;
-        card.querySelector('img').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
-        card.querySelector('p').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
+        card.querySelector('.cardTemplate').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
         cardContainer.appendChild(card);
     }
     // 받은 데이터가 맞는지

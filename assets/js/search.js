@@ -56,8 +56,8 @@ $button.addEventListener('click', async e => {
     card.querySelector('img').src = albumArtURL;
     card.querySelector('h2').textContent = receivedArtistName;
     card.querySelector('p').textContent = ArtistDescription;
-    card.querySelector('img').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
-    card.querySelector('p').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
+    card.querySelector('.cardTemplate').addEventListener("click", () => cardClick(receivedArtistName)); // 클릭 이벤트 리스너 추가
+    
     cardContainer.appendChild(card);
     // 받은 데이터가 맞는지
     console.log(response.choices[0].message.content)
