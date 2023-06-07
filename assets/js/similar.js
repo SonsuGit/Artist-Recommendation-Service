@@ -6,6 +6,11 @@ let data = [{
 }];
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 $button.addEventListener('click', async e => {
+    // 검색 UI 숨기기
+    document.getElementById('initial-UI').classList.add('hidden');
+    // 로딩 표시 보여주기
+    document.getElementById('loadingIndicator').classList.remove('hidden');
+    
     e.preventDefault();
     if($input.value.length == 0){
         alert('아티스트명을 입력해주세요.')
@@ -42,9 +47,6 @@ $button.addEventListener('click', async e => {
 
     cardContainer.innerHTML = '';
     
-    document.getElementById('initial-UI').classList.add('hidden');
-    // 로딩 표시 보여주기
-    document.getElementById('loadingIndicator').classList.remove('hidden');
     // 카드 템플릿 누르면 검색하여 이동하게 하는 함수
     const SEARCH_URL = 'https://open.spotify.com/search/'
     function cardClick(artistName) {
