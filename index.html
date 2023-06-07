@@ -13,12 +13,35 @@
 </head>
 <body>
     <!-- Header -->
-    <header data-include="./assets/html/header.html"></header>
+    <nav class="relative flex flex-col w-full bg-[rgb(2,191,244)] p-2 text-white shadow-md justify-center" data-te-navbar-ref>
+        <div class="flex flex-col w-full flex-wrap">
+            <!-- Navigation links -->
+            <div class="flex flex-col" id="navbarSupportedContentX" data-te-collapse-item>
+                <ul class="m-auto flex flex-wrap flex-row items-center" data-te-navbar-nav-ref>
+                    <li class="mb-0 pr-2" data-te-nav-item-ref>
+                        <a class="hover:text-cyan-700 font-black focus:text-neutral-700 p-2" href="./assets/html/similar.html" data-te-nav-link-ref data-te-ripple-init data-te-ripple-color="light">비슷한 아티스트 찾기</a>
+                    </li>
+                    <li class="mb-0 pr-2" data-te-nav-item-ref>
+                        <a class="hover:text-cyan-700 font-black focus:text-neutral-700 p-2" href="./assets/html/search.html" data-te-nav-link-ref data-te-ripple-init data-te-ripple-color="light">아티스트 검색</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Logo -->
+    <img class="object-cover" src="./assets/img/Logo.png" alt="Logo.png">
     <!-- Main -->
     <main>
-        <p>Artist 4 U는 당신을 위한 아티스트를 추천하는 서비스입니다.</p>
+        <p class="items-center">Artist 4 U는 당신을 위한 아티스트를 추천하는 서비스입니다.</p>
     </main>
     <!-- Footer -->
-    <footer data-include="./assets/html/footer.html"></footer>
+
+    <nav class="w-full bg-[rgb(2,191,244)] py-2 text-white shadow-md shadow-inner hover:text-white focus:text-orange-400 justify-center fixed left-0 bottom-0" data-te-navbar-ref>
+        <!-- Navigation links -->
+        <div class="flex flex-row px-5 justify-between">
+            <p class="font-thin mr-10">2023 Sonsuha</p>
+            <a class="hover:text-neutral-700 font-bold" href="https://github.com/SonsuGit/ormiMiniProject">GitHub Repository</a>
+        </div>
+    </nav>
 </body>
 </html>
