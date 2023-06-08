@@ -11,5 +11,7 @@ Header, Footer 추가하기
 JS 모듈화
 #### 6월 5일
 header, footer 추가하고 메인을 분리
-#### 6월 6일
-search(아티스트에 관한 정보 알아보기)추가와 header, footer UI 조정
+#### 6월 7일
+상대경로 수정, header의 로고 위치 수정, search(아티스트 정보)추가
+#### 6월 8일
+index를 새로 만들어서 search와 similar 분리
