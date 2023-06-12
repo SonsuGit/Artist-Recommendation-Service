@@ -1,7 +1,7 @@
 # Artist Recommendation Service
 ## 개요
 HTML, vanilla JS, tailwindcss, ChatGPT API를 이용한 아티스트 추천 서비스 <br>
-https://sonsugit.github.io/Artist-Recommendation-Service/
+https://sonsugit.github.io/Artist-Recommendation-Service/ <br>
 PC용으로 만들었으나 모바일에서 보는게 더 이쁩니다.
 ## Changelog
 #### ~ 23년 6월 1일
