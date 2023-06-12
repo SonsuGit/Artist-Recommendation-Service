@@ -27,8 +27,10 @@
         </form>
         <!-- 추가된 로딩 표시 -->
         <div id="loadingIndicator" class="flex justify-center items-center h-10 mt-4 hidden">
-            <span class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-gray-900"></span>
-            <p class="ml-2">로딩 중...</p>
+            <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-[rgb(2,191,244)] motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+            </div>
+                <p class="ml-2 font-black animate-bounce">로딩 중...</p>
         </div>
         <!-- 카드 형식의 데이터 -->
         <div id="cardContainer" class="grid grid-cols-2 justify-center items-center m-10 lg:w-4/5 hidden">
