@@ -33,20 +33,21 @@
  ### PC
  
 
- - index.html
- 이미지 넣을 자리
+ #### index.html
+ <img src="readme/index.gif" width="70%">
+ 
  - 유저가 맨 처음 만나는 화면입니다.
  - 클릭가능한 글씨위에 커서를 올려놓으면 색상이 바뀌고, bounce 애니메이션이 작동합니다.
  - 모바일에서는 클릭 가능하다는 힌트를 주기 위해 bounce 애니메이션이 기본적으로 적용됩니다.
 
- - search.html
- 이미지 넣을 자리
+ #### search.html
+ <img src="readme/search.gif" width="70%">
  - '그 아티스트에 대해 더 알고싶나요?'를 누르거나, 헤더의 '아티스트 알아보기'를 누르면 들어갈 수 있습니다.
  - 아티스트의 이름을 입력하면 그 사진과 아티스트에 관한 설명이 나옵니다.
  - 설명이나 사진을 클릭하면 스포티파이에서 그 아티스트를 검색해줍니다.
 
- -  similar.html
- 이미지 넣을 자리
+ #### similar.html
+ <img src="readme/similar.gif" width="70%">
  - '비슷한 아티스트를 추천해드릴까요?'를 누르거나, 헤더의 '비슷한 아티스트 찾기'를 누르면 들어갈 수 있습니다.
  - 아티스트의 이름을 입력하면 그 아티스트와 유사하거나 관련이 있는 아티스트 4명을 추천해줍니다.
  - 그 아티스트들을 클릭하면 스포티파이에서 그 아티스트를 검색해줍니다.
@@ -55,9 +56,15 @@
  
 
  - PC와 대부분 동일하지만, UI적인 측면에서 가독성을 위해 몇몇 요소들의 크기가 조정되었습니다.
- - 이미지1
- - 2
- - 3
+ #### index.html
+ <img src="readme/mobile-index.gif" width="40%">
+ 
+ #### search.html
+ <img src="readme/mobile-search.gif" width="40%">
+ 
+ #### similar.html
+ <img src="readme/mobile-similar.gif" width="40%">
+
  
  ## 5. 개발하며 느낀점
  
