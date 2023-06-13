@@ -38,7 +38,6 @@
  
  - 유저가 맨 처음 만나는 화면입니다.
  - 클릭가능한 글씨위에 커서를 올려놓으면 색상이 바뀌고, bounce 애니메이션이 작동합니다.
- - 모바일에서는 클릭 가능하다는 힌트를 주기 위해 bounce 애니메이션이 기본적으로 적용됩니다.
 
  #### search.html
  <img src="readme/search.gif" width="70%">
@@ -68,6 +67,8 @@
  #### index.html
  <img src="readme/mobile-index.gif" width="40%">
  
+  - 모바일에서는 클릭 가능하다는 힌트를 주기 위해 bounce 애니메이션이 기본적으로 적용됩니다.
+
  #### search.html
  <img src="readme/mobile-search.gif" width="40%">
  
