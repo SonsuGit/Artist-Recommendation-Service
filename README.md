@@ -52,6 +52,12 @@
  - 아티스트의 이름을 입력하면 그 아티스트와 유사하거나 관련이 있는 아티스트 4명을 추천해줍니다.
  - 그 아티스트들을 클릭하면 스포티파이에서 그 아티스트를 검색해줍니다.
  
+ #### UI
+ <img src="readme/UI.gif" width="70%">
+ - 상단의 헤더를 누르면 similar, search 등으로 이동합니다.
+ - 로고를 누르면 index로 이동합니다.
+ - 우측 하단 GitHub Repository를 누르면 이 Repository로 연결됩니다.
+ 
  ### Mobile
  
 
