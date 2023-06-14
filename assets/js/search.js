@@ -19,7 +19,7 @@ $button.addEventListener('click', async e => {
         return; // 입력값이 없을 경우 함수 종료
     }
 
-    let userInputData = $input.value; // userInputData 변수 선언
+    const userInputData = $input.value; // userInputData 변수 선언
 
     data.push({
         "role": "user",
