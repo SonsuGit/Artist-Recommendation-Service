@@ -1,39 +1,29 @@
-//https://aosceno.tistory.com/556
-/**
- * HTML 태그안에 입력함
- * ex) <header data-include='URL'?></header>
- * @returns 
- */
-function includeHTML(){
-  let z, elmnt, file, xhttp;
+async function includeHTML() {
+  const elements = document.getElementsByTagName("*");
 
-  z = document.getElementsByTagName("*");
-  
-  for (let i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    file = elmnt.getAttribute("data-include");
-    
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const file = element.getAttribute("data-include");
+
     if (file) {
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("data-include");
-          includeHTML();
-        }//if
-      }//onreadystatechange
+      try {
+        const response = await fetch(file);
+        if (response.ok) {
+          const html = await response.text();
+          element.innerHTML = html;
+        } else {
+          element.innerHTML = "Page not found.";
+        }
+      } catch (error) {
+        element.innerHTML = "Error loading the page.";
+        console.error(error);
+      }
 
-      xhttp.open("GET", file, true);
-      xhttp.send();
+      element.removeAttribute("data-include");
+      includeHTML();
       return;
-    }//if - file
-  }//for
-}//includeHTML
+    }
+  }
+}
 
-
-/* ✨ 실행 */
-window.addEventListener('DOMContentLoaded',()=>{
-  includeHTML();
-});
+window.addEventListener('DOMContentLoaded', includeHTML);
