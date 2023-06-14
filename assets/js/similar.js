@@ -38,7 +38,6 @@ $button.addEventListener('click', async e => {
 
     if (!checkFormat(response)) {
         alert('아티스트의 이름이 옳지 않거나 정보가 적습니다.');
-        console.log('아티스트없어');
         return;
     }
     let ArtistNameList = response.choices[0].message.content.split(",");
