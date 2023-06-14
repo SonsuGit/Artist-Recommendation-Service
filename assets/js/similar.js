@@ -1,3 +1,5 @@
+import { cardClick } from "./cardClick.js";
+
 let $input = document.querySelector('#artistInput');
 let $button = document.querySelector('button');
 let data = [{
@@ -12,13 +14,12 @@ $button.addEventListener('click', async e => {
     document.getElementById('loadingIndicator').classList.remove('hidden');
     
     e.preventDefault();
-    if($input.value.length == 0){
-        alert('아티스트명을 입력해주세요.')
+    if ($input.value.length == 0) {
+        alert('아티스트명을 입력해주세요.');
+        return; // 입력값이 없을 경우 함수 종료
     }
-    else{
-        userInputData = $input.value;
-    $input.value = '';
-    }
+
+    let userInputData = $input.value; // userInputData 변수 선언
 
     data.push({
         "role": "user",
