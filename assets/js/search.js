@@ -54,8 +54,8 @@ $button.addEventListener('click', async e => {
     card.querySelector('h2').textContent = receivedArtistName;
     card.querySelector('p').textContent = ArtistDescription;
     card.querySelector('.cardTemplate').addEventListener("click", () => cardClick(receivedArtistName)); // 클릭 이벤트 리스너 추가
-    
     cardContainer.appendChild(card);
+    
     // 받은 데이터가 맞는지
     console.log(response.choices[0].message.content)
     // 로딩 표시 숨기기
