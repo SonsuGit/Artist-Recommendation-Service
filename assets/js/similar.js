@@ -47,11 +47,6 @@ $button.addEventListener('click', async e => {
 
     cardContainer.innerHTML = '';
     
-    // 카드 템플릿 누르면 검색하여 이동하게 하는 함수
-    const SEARCH_URL = 'https://open.spotify.com/search/'
-    function cardClick(artistName) {
-        window.open(SEARCH_URL + artistName);
-    }
     console.log(response)
     // chatGPT가 보낸 아티스트 이름 리스트로 카드템플릿 추가하기
     for (const i of ArtistNameList) {
