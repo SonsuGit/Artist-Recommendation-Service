@@ -4,11 +4,11 @@
  * @param {string} artistName 아티스트 이름
  * @returns URL
  */
-async function fetchAlbumArt(artistName) {
+export async function fetchAlbumArt(artistName) {
     try {
         const response = await albumArt(artistName);
         return response;
     } catch (error) {
-        return './assets/img/no_img.webp'
+        return '../img/no_img.png'
     }
 }

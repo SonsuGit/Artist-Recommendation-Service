@@ -4,7 +4,7 @@
  * @param {object} response ChatGPT가 주는 resoponse
  * @returns 포멧에 맞는지 Boolean 값 return
  */
-function checkFormat(response){
+export function checkFormat(response){
     const names = response.choices[0].message.content.split(',').map(name => name.trim());
     return names.length === 4 && names.every(name => name !== '');
 };

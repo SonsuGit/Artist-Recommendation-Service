@@ -1,4 +1,4 @@
-import { cardClick } from "./cardClick.js";
+import { renderCard } from "./renderCard.js";
 
 let $input = document.querySelector('#artistInput');
 let $button = document.querySelector('button');
@@ -41,20 +41,11 @@ $button.addEventListener('click', async e => {
     let ArtistDescription = response.choices[0].message.content;
     console.log(ArtistDescription)
     let receivedArtistName = userInputData
-    const cardContainer = document.getElementById('cardContainer');
-    const cardTemplate = document.getElementById('cardTemplate');
+    
 
     cardContainer.innerHTML = '';
 
-    console.log(response)
-    // chatGPT가 보낸 아티스트 이름 리스트로 카드템플릿 추가하기
-    const albumArtURL = await fetchAlbumArt(receivedArtistName);
-    const card = cardTemplate.content.cloneNode(true);
-    card.querySelector('img').src = albumArtURL;
-    card.querySelector('h2').textContent = receivedArtistName;
-    card.querySelector('p').textContent = ArtistDescription;
-    card.querySelector('.cardTemplate').addEventListener("click", () => cardClick(receivedArtistName)); // 클릭 이벤트 리스너 추가
-    cardContainer.appendChild(card);
+    renderCard(receivedArtistName, ArtistDescription)
     
     // 받은 데이터가 맞는지
     console.log(response.choices[0].message.content)
