@@ -43,22 +43,6 @@ $button.addEventListener('click', async e => {
         return;
     }
     let ArtistNameList = response.choices[0].message.content.split(",");
-    // const cardContainer = document.getElementById('cardContainer');
-    // const cardTemplate = document.getElementById('cardTemplate');
-
-    // cardContainer.innerHTML = '';
-    
-    console.log(response)
-    // chatGPT가 보낸 아티스트 이름 리스트로 카드템플릿 추가하기
-    // for (const i of ArtistNameList) {
-    //     const albumArtURL = await fetchAlbumArt(i);
-    //     const card = cardTemplate.content.cloneNode(true);
-    //     card.querySelector('img').src = albumArtURL;
-    //     card.querySelector('p').textContent = i;
-    //     card.querySelector('.cardTemplate').addEventListener("click", () => cardClick(i)); // 클릭 이벤트 리스너 추가
-    //     cardContainer.appendChild(card);
-    // }
-    console.log(typeof ArtistNameList)
 
     for (const ArtistName of ArtistNameList) {
         console.log(ArtistName)

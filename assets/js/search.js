@@ -36,7 +36,6 @@ $button.addEventListener('click', async e => {
     });
 
     const response = await res.json();
-    // --- 여기부터 similar.js와 다름
 
     let ArtistDescription = response.choices[0].message.content;
     console.log(ArtistDescription)
